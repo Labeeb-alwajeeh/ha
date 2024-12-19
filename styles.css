@@ -1,0 +1,232 @@
+/* styles.css */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4; /* لون خلفية أفتح */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6; /* زيادة تباعد الأسطر */
+    direction: rtl; /* جعل النص يبدأ من اليمين */
+}
+
+header {
+    background: linear-gradient(135deg, #007bff, #0056b3); /* تدرج لوني */
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 20px;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative; /* لتطبيق تأثير الحركة */
+}
+
+nav a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #ffffff;
+    transition: width 0.3s;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+nav a:hover::after {
+    width: 100%; /* تأثير خط تحت الرابط عند التحويم */
+}
+
+main {
+    padding: 30px;
+}
+
+.intro {
+    background: #ffffff;
+    border-radius: 15px; /* زوايا أكثر انسيابية */
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1); /* ظل أعمق */
+}
+
+.img-container {
+    text-align: center; /* توسيط الصورة */
+    margin: 20px 0; /* مسافة حول الصورة */
+}
+
+.img-container img {
+    max-width: 100%; /* جعل الصورة تتناسب مع العرض */
+    height: auto; /* الحفاظ على نسبة العرض إلى الارتفاع */
+    border-radius: 10px; /* زوايا منحنية للصورة */
+}
+
+.intro h2 {
+    color: #007bff;
+    font-size: 28px; /* زيادة حجم الخط */
+    margin-bottom: 15px; /* مسافة أسفل العنوان */
+}
+
+.intro p {
+    font-size: 18px; /* زيادة حجم الخط */
+    margin-bottom: 15px; /* مسافة أسفل الفقرات */
+}
+
+.call-to-action {
+    background: #28a745;
+    color: white;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.call-to-action h2 {
+    font-size: 24px; /* زيادة حجم الخط */
+}
+
+.call-to-action p {
+    font-size: 18px; /* زيادة حجم الخط */
+}
+
+.button {
+    display: inline-block;
+    padding: 15px 25px;
+    background: #ffffff;
+    color: #28a745;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s, transform 0.3s; /* تأثير حركة عند التحويم */
+    font-weight: bold; /* جعل النص غامق */
+}
+
+.button:hover {
+    background: #218838;
+    color: white; /* تغيير لون النص عند التحويم */
+    transform: scale(1.05); /* تكبير الزر عند التحويم */
+}
+
+footer {
+    text-align: center;
+    padding: 15px 0;
+    background: #343a40;
+    color: #ffffff;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2); /* ظل خفيف في الأعلى */
+}
+/* styles.css */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4; /* لون خلفية أفتح */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6; /* زيادة تباعد الأسطر */
+    direction: rtl; /* جعل النص يبدأ من اليمين */
+}
+
+header {
+    background: linear-gradient(135deg, #007bff, #0056b3); /* تدرج لوني */
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 20px;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative; /* لتطبيق تأثير الحركة */
+}
+
+nav a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #ffffff;
+    transition: width 0.3s;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+nav a:hover::after {
+    width: 100%; /* تأثير خط تحت الرابط عند التحويم */
+}
+
+main {
+    padding: 30px;
+}
+
+.gallery {
+    background: #ffffff;
+    border-radius: 15px; /* زوايا أكثر انسيابية */
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1); /* ظل أعمق */
+}
+
+.gallery h2 {
+    color: #007bff;
+    font -size: 28px; /* زيادة حجم الخط */
+    margin-bottom: 20px; /* مسافة أسفل العنوان */
+    text-align: center; /* توسيط العنوان */
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* شبكة مرنة */
+    gap: 15px; /* مسافة بين العناصر */
+}
+
+.gallery-item {
+    overflow: hidden; /* إخفاء أي جزء زائد من الصورة */
+    border-radius: 10px; /* زوايا منحنية للعناصر */
+    transition: transform 0.3s, box-shadow 0.3s; /* تأثير حركة */
+}
+
+.gallery-item:hover {
+    transform: scale(1.05); /* تكبير العنصر عند التحويم */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* ظل أعمق عند التحويم */
+}
+
+.gallery-item img {
+    width: 100%; /* جعل الصورة تتناسب مع العنصر */
+    height: auto; /* الحفاظ على نسبة العرض إلى الارتفاع */
+    border-radius: 10px; /* زوايا منحنية للصورة */
+}
+
+footer {
+    text-align: center;
+    padding: 15px 0;
+    background: #343a40;
+    color: #ffffff;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2); /* ظل خفيف في الأعلى */
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>التبرعات - مشروع طريق الحجف</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>مشروع طريق الحجف</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">الرجوع الئ الصفحه الرئيسية</a></li>
+                <li><a href="gallery.html">جزء من صور المشروع</a></li>
+                <li><a href="donate.html">التبرعات</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="donation">
+            <h2>ساهم في المشروع</h2>
+            <form id="donation-form">
+                <input type="text" id="amount" name="amount" required>
+                
+                <label for="name">اسمك</label>
+                <input type="text" id="name" name="name" required>
+                <label for="amount">المبلغ:</label>
+                <button type="submit">تبرع الآن</button>
+                
+            </form>
+        </section>
+        <section class="donation">
+           
+               
+                
+                
+            </form>
+        </section>
+        <section class="donation">
+           
+                
+               
+            </form>
+        </section>
+       
+    </main>
+
+    <footer>
+        <p>جميع الحقوق محفوظه مشروع طريق الحجف</p>
+    </footer>
+
+    <script>
+        document.getElementById('donation-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const amount = document.getElementById('amount').value;
+            const whatsappLink = `https://wa.me/+967775142301?text=مرحبا، أنا ${name} وأرغب في التبرع بمبلغ ${amount} ريال.`;
+            window.open(whatsappLink, '_blank');
+            alert(`شكرًا لك، ${name}! لقد تم توجيهك إلى واتساب.`);
+            this.reset();
+        });
+    </script>
+</body>
+</html>
