@@ -24,9 +24,9 @@
             <form id="donation-form">
                 <input type="text" id="amount" name="amount" required>
                 
-                <label for="name">اسمك</label>
+                <label for="name">المبلغ</label>
                 <input type="text" id="name" name="name" required>
-                <label for="amount">المبلغ:</label>
+                <label for="amount">الاسم:</label>
                 <button type="submit">تبرع الآن</button>
                 
             </form>
@@ -56,7 +56,7 @@
             event.preventDefault();
             const name = document.getElementById('name').value;
             const amount = document.getElementById('amount').value;
-            const whatsappLink = `https://wa.me/+967775142301?text=مرحبا، أنا ${name} وأرغب في التبرع بمبلغ ${amount} ريال.`;
+            const whatsappLink = `https://wa.me/+967775142301?text=مرحبا،  ارغب بالتبرع بالمبلغ ${name}  انا   ${amount} ريال.`;
             window.open(whatsappLink, '_blank');
             alert(`شكرًا لك، ${name}! لقد تم توجيهك إلى واتساب.`);
             this.reset();
