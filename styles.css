@@ -1,4 +1,4 @@
-/* styles.css */
+/* General Styles */
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f4f4f4; /* لون خلفية أفتح */
@@ -6,227 +6,423 @@ body {
     padding: 0;
     line-height: 1.6; /* زيادة تباعد الأسطر */
     direction: rtl; /* جعل النص يبدأ من اليمين */
+    transition: background-color 0.3s, color 0.3s; /* انتقال سلس للألوان */
 }
 
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #2c2c2c; /* خلفية داكنة */
+    color: #f0f0f0; /* نص فاتح */
+}
+
+body.dark-mode header {
+    background: linear-gradient(135deg, #1a1a1a, #000000);
+}
+
+body.dark-mode nav a {
+    color: #f0f0f0;
+}
+
+body.dark-mode nav a::after {
+    background: #f0f0f0;
+}
+
+body.dark-mode .intro,
+body.dark-mode .gallery,
+body.dark-mode .donation,
+body.dark-mode .donation-info {
+    background: #3a3a3a; /* خلفية أغمق للعناصر */
+    color: #f0f0f0;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3); /* ظل أغمق */
+}
+
+body.dark-mode .intro h2,
+body.dark-mode .gallery h2,
+body.dark-mode .donation h2 {
+    color: #8bbdfc; /* لون أفتح للعناوين */
+}
+
+body.dark-mode .call-to-action {
+    background: #4a4a4a; /* خلفية داكنة لـ call-to-action */
+    color: #f0f0f0;
+}
+
+body.dark-mode .button {
+    background-color: #0056b3; /* لون أغمق للزر */
+}
+
+body.dark-mode .button:hover {
+    background-color: #003f80;
+}
+
+body.dark-mode footer {
+    background-color: #1a1a1a;
+    color: #bbb;
+}
+
+body.dark-mode .gallery-item {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode input[type="text"],
+body.dark-mode input[type="number"] {
+    background-color: #555;
+    color: #f0f0f0;
+    border: 1px solid #777;
+}
+
+body.dark-mode input[type="text"]::placeholder,
+body.dark-mode input[type="number"]::placeholder {
+    color: #bbb;
+}
+
+body.dark-mode .contact-methods strong {
+    color: #ccc;
+}
+
+
+/* Header Styles */
 header {
-    background: linear-gradient(135deg, #007bff, #0056b3); /* تدرج لوني */
-    color: #ffffff;
-    padding: 20px 0;
+    background: linear-gradient(135deg, #007bff, #0056b3); /* تدرج لوني للخلفية */
+    color: white;
+    padding: 1rem 0;
     text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* ظل خفيف للرأس */
 }
 
+header h1 {
+    margin: 0;
+    font-size: 2.5rem; /* حجم خط أكبر */
+    letter-spacing: 1px; /* تباعد بين الحروف */
+}
+
+/* Navigation Styles */
 nav ul {
-    list-style-type: none;
+    list-style: none;
     padding: 0;
+    margin: 10px 0 0 0;
+    display: flex; /* لعرض الروابط أفقيًا */
+    justify-content: center; /* توسيط الروابط */
 }
 
-nav ul li {
-    display: inline;
-    margin: 0 20px;
+nav li {
+    margin: 0 15px;
 }
 
 nav a {
-    color: #ffffff;
+    color: white;
     text-decoration: none;
     font-weight: bold;
-    position: relative; /* لتطبيق تأثير الحركة */
+    font-size: 1.1rem;
+    position: relative; /* لتأثير الخط السفلي */
+    padding-bottom: 5px; /* مسافة للخط السفلي */
+    transition: color 0.3s ease;
 }
 
 nav a::after {
     content: '';
-    display: block;
+    position: absolute;
     width: 0;
     height: 2px;
-    background: #ffffff;
-    transition: width 0.3s;
-    position: absolute;
-    bottom: -5px;
+    background: white;
     left: 50%;
+    bottom: 0;
     transform: translateX(-50%);
+    transition: width 0.3s ease;
 }
 
 nav a:hover::after {
-    width: 100%; /* تأثير خط تحت الرابط عند التحويم */
+    width: 100%;
 }
 
+nav a:hover {
+    color: #e0e0e0;
+}
+
+/* Main Content Styles */
 main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+    display: grid; /* استخدام Grid لتنظيم الأقسام */
+    gap: 30px; /* تباعد بين الأقسام */
+}
+
+/* Section Styles - General */
+section {
+    background-color: white;
     padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); /* ظل أكبر وأوضح */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* تأثير عند التحويم */
 }
 
-.intro {
-    background: #ffffff;
-    border-radius: 15px; /* زوايا أكثر انسيابية */
-    padding: 30px;
-    margin-bottom: 30px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1); /* ظل أعمق */
+section:hover {
+    transform: translateY(-5px); /* رفع العنصر قليلاً */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
-.img-container {
-    text-align: center; /* توسيط الصورة */
-    margin: 20px 0; /* مسافة حول الصورة */
+section h2 {
+    color: #007bff;
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 2rem;
+    border-bottom: 2px solid #eee; /* خط تحت العنوان */
+    padding-bottom: 10px;
 }
 
-.img-container img {
-    max-width: 100%; /* جعل الصورة تتناسب مع العرض */
-    height: auto; /* الحفاظ على نسبة العرض إلى الارتفاع */
-    border-radius: 10px; /* زوايا منحنية للصورة */
+/* Intro Section */
+.intro .img-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.intro .img-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .intro h2 {
-    color: #007bff;
-    font-size: 28px; /* زيادة حجم الخط */
-    margin-bottom: 15px; /* مسافة أسفل العنوان */
+    margin-top: 20px;
+    color: #333; /* لون مختلف للعنوان هنا */
 }
 
 .intro p {
-    font-size: 18px; /* زيادة حجم الخط */
-    margin-bottom: 15px; /* مسافة أسفل الفقرات */
+    margin-bottom: 15px;
+    line-height: 1.8;
+    color: #555;
+    text-align: justify; /* محاذاة النص */
 }
 
+.intro ul {
+    list-style: none; /* إزالة النقاط الافتراضية */
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.intro ul li {
+    background-color: #e9f7ff; /* خلفية خفيفة لعناصر القائمة */
+    border-right: 4px solid #007bff; /* شريط جانبي أزرق */
+    padding: 10px 15px;
+    margin-bottom: 8px;
+    border-radius: 5px;
+    color: #333;
+    font-weight: 500;
+}
+
+body.dark-mode .intro ul li {
+    background-color: #444;
+    border-right: 4px solid #8bbdfc;
+    color: #f0f0f0;
+}
+
+/* Call to Action Section */
 .call-to-action {
-    background: #28a745;
-    color: white;
-    border-radius: 10px;
-    padding: 20px;
     text-align: center;
-    margin-bottom: 30px;
+    background-color: #007bff; /* خلفية زرقاء جذابة */
+    color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 123, 255, 0.2);
 }
 
 .call-to-action h2 {
-    font-size: 24px; /* زيادة حجم الخط */
+    color: white;
+    border-bottom-color: rgba(255, 255, 255, 0.3);
 }
 
 .call-to-action p {
-    font-size: 18px; /* زيادة حجم الخط */
+    font-size: 1.1rem;
+    margin-bottom: 30px;
 }
 
 .button {
     display: inline-block;
-    padding: 15px 25px;
-    background: #ffffff;
-    color: #28a745;
-    text-decoration: none;
+    background-color: #28a745; /* زر أخضر للتبرع */
+    color: white;
+    padding: 12px 25px;
     border-radius: 5px;
-    transition: background 0.3s, transform 0.3s; /* تأثير حركة عند التحويم */
-    font-weight: bold; /* جعل النص غامق */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .button:hover {
-    background: #218838;
-    color: white; /* تغيير لون النص عند التحويم */
-    transform: scale(1.05); /* تكبير الزر عند التحويم */
+    background-color: #218838;
+    transform: translateY(-2px); /* رفع الزر قليلاً عند التحويم */
 }
 
-footer {
-    text-align: center;
-    padding: 15px 0;
-    background: #343a40;
-    color: #ffffff;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2); /* ظل خفيف في الأعلى */
-}
-/* styles.css */
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4; /* لون خلفية أفتح */
-    margin: 0;
-    padding: 0;
-    line-height: 1.6; /* زيادة تباعد الأسطر */
-    direction: rtl; /* جعل النص يبدأ من اليمين */
-}
-
-header {
-    background: linear-gradient(135deg, #007bff, #0056b3); /* تدرج لوني */
-    color: #ffffff;
-    padding: 20px 0;
-    text-align: center;
-}
-
-nav ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 20px;
-}
-
-nav a {
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: bold;
-    position: relative; /* لتطبيق تأثير الحركة */
-}
-
-nav a::after {
-    content: '';
-    display: block;
-    width: 0;
-    height: 2px;
-    background: #ffffff;
-    transition: width 0.3s;
-    position: absolute;
-    bottom: -5px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-nav a:hover::after {
-    width: 100%; /* تأثير خط تحت الرابط عند التحويم */
-}
-
-main {
-    padding: 30px;
-}
-
-.gallery {
-    background: #ffffff;
-    border-radius: 15px; /* زوايا أكثر انسيابية */
-    padding: 30px;
-    margin-bottom: 30px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1); /* ظل أعمق */
-}
-
-.gallery h2 {
-    color: #007bff;
-    font -size: 28px; /* زيادة حجم الخط */
-    margin-bottom: 20px; /* مسافة أسفل العنوان */
-    text-align: center; /* توسيط العنوان */
-}
-
+/* Gallery Section */
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* شبكة مرنة */
-    gap: 15px; /* مسافة بين العناصر */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* شبكة مرنة للصور */
+    gap: 20px;
+    padding: 20px 0;
 }
 
 .gallery-item {
-    overflow: hidden; /* إخفاء أي جزء زائد من الصورة */
-    border-radius: 10px; /* زوايا منحنية للعناصر */
-    transition: transform 0.3s, box-shadow 0.3s; /* تأثير حركة */
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .gallery-item:hover {
-    transform: scale(1.05); /* تكبير العنصر عند التحويم */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* ظل أعمق عند التحويم */
+    transform: scale(1.03); /* تكبير بسيط عند التحويم */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .gallery-item img {
-    width: 100%; /* جعل الصورة تتناسب مع العنصر */
-    height: auto; /* الحفاظ على نسبة العرض إلى الارتفاع */
-    border-radius: 10px; /* زوايا منحنية للصورة */
+    width: 100%;
+    height: 200px; /* ارتفاع ثابت للصور */
+    object-fit: cover; /* لملء المساحة مع الحفاظ على الأبعاد */
+    display: block;
 }
 
-footer {
-    text-align: center;
-    padding: 15px 0;
-    background: #343a40;
-    color: #ffffff;
-    position: relative;
-    bottom: 0;
+/* Donation Section */
+.donation form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* تباعد بين عناصر النموذج */
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fcfcfc;
+}
+
+body.dark-mode .donation form {
+    background-color: #333;
+    border: 1px solid #555;
+}
+
+
+.donation label {
+    font-weight: bold;
+    color: #333;
+}
+
+body.dark-mode .donation label {
+    color: #f0f0f0;
+}
+
+.donation input[type="text"],
+.donation input[type="number"] {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
     width: 100%;
-    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2); /* ظل خفيف في الأعلى */
+    box-sizing: border-box; /* لضمان عدم تجاوز العرض المحدد */
+}
+
+.donation button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.donation button[type="submit"]:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.donation-info {
+    text-align: center;
+    margin-top: 30px;
+    padding: 25px;
+    background-color: #e9f7ff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+body.dark-mode .donation-info {
+    background-color: #3a3a3a;
+    color: #f0f0f0;
+}
+
+.donation-info h2 {
+    color: #007bff;
+    margin-bottom: 20px;
+    border-bottom-color: rgba(0, 123, 255, 0.2);
+}
+
+.contact-methods p {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+body.dark-mode .contact-methods p {
+    color: #ddd;
+}
+
+.contact-methods strong {
+    color: #007bff;
+}
+
+.contact-methods a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.contact-methods a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 40px;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav li {
+        margin: 10px 0;
+    }
+
+    main {
+        padding: 10px;
+    }
+
+    section {
+        padding: 20px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr; /* عمود واحد في الشاشات الصغيرة */
+    }
 }
