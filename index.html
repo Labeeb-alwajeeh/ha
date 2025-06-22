@@ -4,9 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>مشروع طريق الحجف</title>
-    <link rel="stylesheet" href="styles.css"> <!-- ربط ملف CSS -->
-</head>
+    <link rel="stylesheet" href="styles.css"> </head>
 <body>
+    <div id="preloader">
+        <div class="spinner"></div>
+    </div>
+
     <header>
         <h1>مشروع طريق الحجف</h1>
         <nav>
@@ -17,10 +20,9 @@
             </ul>
         </nav>
     </header>
-    
+
     <main>
         <section class="intro">
-            
             <div class="img-container">
                 <img src="11.png" alt="صورة 1">
                 <h2>نبذة عن المشروع</h2>
@@ -45,15 +47,21 @@
             <p>الحلم سيتحقق بإذن الله: مع استمرار العمل الجاد والمتفاني، فإن مشروع قرية الحجف يعد بتحقيق نجاح باهر وتحويل حلم الأهالي إلى واقع ملموس. إن الإيمان القوي بالله تعالى والتوكل عليه هو الدافع الرئيسي الذي يدفع الجميع نحو الأمام.</p>
         </section>
 
+        <section style="text-align: center; margin-top: 30px; background-color: #e9ecef; padding: 20px; border-radius: 10px;">
+            <h2>إجمالي المساهمات التقريبية: <span class="counter" data-target="150000">0</span> ريال</h2>
+        </section>
+
         <section class="call-to-action">
             <h2>ساهم معنا!</h2>
             <p>انضم إلينا في تحقيق هذا المشروع الهام. كل تبرع يساعدنا في تحقيق أهدافنا.</p>
             <a href="donate.html" class="button">تبرع الآن</a>
         </section>
-    </main>
+
+        </main>
 
     <footer>
         <p>جميع الحقوق محفوظة مشروع طريق الحجف</p>
     </footer>
-</body>
+
+    <script src="script.js"></script> </body>
 </html>
